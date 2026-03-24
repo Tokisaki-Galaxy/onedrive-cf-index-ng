@@ -12,7 +12,7 @@ FROM node:24-bullseye-slim AS runtime
 
 COPY --from=build /src/.vercel /app/.vercel
 WORKDIR /app
-RUN npm install wrangler@latest
+RUN npm install wrangler@4.76.0
 RUN apt update && apt -y install ca-certificates && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 8788
